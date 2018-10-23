@@ -17,10 +17,16 @@ spring:
     driver-class-name: org.h2.Driver
     type: com.zaxxer.hikari.HikariDataSource
 
+security:
+  oauth2:
+    client:
+      client-id: id
+      client-secret: secret
+
 logging:
   level:
     root: INFO
     org.springframework.web: INFO
     org.springframework.security: INFO
-    company: DEBUG
+    io.company: DEBUG
 
