@@ -1,11 +1,8 @@
 package io.company.base.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -27,12 +24,14 @@ public class OauthAuthServerConfig extends AuthorizationServerConfigurerAdapter 
         this.authenticationManager = authenticationManager;
     }
 
+
     @Bean
     public TokenStore tokenStore(){
         return new JwtTokenStore(new JwtAccessTokenConverter(){{
             this.setSigningKey(JWT_TOKEN_KEY);
         }});
     }
+
 
     @Bean
     public JwtAccessTokenConverter accessTokenConverter(){

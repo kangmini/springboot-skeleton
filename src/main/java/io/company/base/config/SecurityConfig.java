@@ -30,6 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .withUser("test").password("1234").roles("USER");
     }
 
+
     @Bean
     @Override
     protected AuthenticationManager authenticationManager() throws Exception {
