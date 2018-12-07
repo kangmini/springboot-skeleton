@@ -15,13 +15,7 @@ spring:
     username: sa
     password:
     driver-class-name: org.h2.Driver
-    type: com.zaxxer.hikari.HikariDataSource
 
-security:
-  oauth2:
-    client:
-      client-id: id
-      client-secret: secret
 
 logging:
   level:
