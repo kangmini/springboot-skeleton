@@ -13,5 +13,4 @@ GET http://localhost:3000/hello/exception
 GET http://localhost:3000/hello/data
 ###
 GET http://localhost:3000/hello/base-exception
-
 ###
