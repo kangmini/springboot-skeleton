@@ -19,6 +19,13 @@ public class ExceptionAdvisor {
                 .body(new ApiResponse(HttpStatus.INTERNAL_SERVER_ERROR,"9999", e.getMessage()));
     }
 
+    @ExceptionHandler(BaseException.class)
+    public ResponseEntity baseException(BaseException be) {
+        log.error("" + be);
+        return ResponseEntity.status(be.getStatus())
+                .body(new ApiResponse(HttpStatus.valueOf(be.getStatus()),"9998", be.getMessage()));
+    }
+
     @ExceptionHandler(NoHandlerFoundException.class)
     public ResponseEntity notFount(NoHandlerFoundException e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND)

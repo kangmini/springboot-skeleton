@@ -12,6 +12,6 @@ public class ApiController extends AbstractController{
 
     @GetMapping("member")
     public ResponseEntity member(OAuth2Authentication auth) {
-        return ResponseEntity.ok(makeResponse(auth.toString()));
+        return ResponseEntity.ok(makeResponse(auth));
     }
 }

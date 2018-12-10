@@ -10,7 +10,7 @@ import org.springframework.http.HttpStatus;
 public class ApiResponse {
 
     private int status;
-    private String errorMsg;
+    private String msg;
     private String errorCode;
     private Object data;
 
@@ -20,19 +20,19 @@ public class ApiResponse {
 
     public ApiResponse(HttpStatus status) {
         this.status = status.value();
-        this.errorMsg = status.getReasonPhrase();
+        this.msg = status.getReasonPhrase();
         this.errorCode = "0000";
     }
 
     public ApiResponse(HttpStatus status, String errorCode) {
         this.status = status.value();
-        this.errorMsg = status.getReasonPhrase();
+        this.msg = status.getReasonPhrase();
         this.errorCode = errorCode;
     }
 
-    public ApiResponse(HttpStatus status, String errorCode, String errorMsg) {
+    public ApiResponse(HttpStatus status, String errorCode, String msg) {
         this.status = status.value();
-        this.errorMsg = errorMsg;
+        this.msg = msg;
         this.errorCode = errorCode;
     }
 }
