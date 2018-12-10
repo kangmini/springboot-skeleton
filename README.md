@@ -1,4 +1,4 @@
-#더 빠른 시작을 위한 Spring Boot 뼈다구
+# 더 빠른 시작을 위한 Spring Boot 뼈다구
 
 ## Spring security
 
