@@ -1,6 +1,9 @@
 package io.company;
 
+import io.company.app.model.Member;
+import io.company.app.repository.MemberRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +19,18 @@ public class CompanyApplicationTests {
     @Autowired
     PasswordEncoder passwordEncoder;
 
+    @Autowired
+    MemberRepository memberRepository;
+
+
     @Test
     public void contextLoads() {
-        log.info(passwordEncoder.encode("1234"));
+        for(int i = 0; i < 120; i++) {
+            Member member = new Member();
+            member.setEmail("email@email.com" + String.valueOf(i));
+            member.setName("뼈다구님" + String.valueOf(i));
+            memberRepository.save(member);
+        }
     }
 
 }
