@@ -26,18 +26,16 @@ public class OauthAuthServerConfig extends AuthorizationServerConfigurerAdapter 
 
 
     @Bean
-    public TokenStore tokenStore(){
-        return new JwtTokenStore(new JwtAccessTokenConverter(){{
-            this.setSigningKey(JWT_TOKEN_KEY);
-        }});
-    }
-
-
-    @Bean
     public JwtAccessTokenConverter accessTokenConverter(){
         JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
         jwtAccessTokenConverter.setSigningKey(JWT_TOKEN_KEY);
         return jwtAccessTokenConverter;
+    }
+
+
+    @Bean
+    public TokenStore tokenStore(){
+        return new JwtTokenStore(accessTokenConverter());
     }
 
 

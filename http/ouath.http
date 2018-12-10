@@ -1,0 +1,10 @@
+POST http://localhost:3000/oauth/token
+Authorization: Basic id 1234
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&username=kimkm&password=1234&scope=all
+
+###
+GET http://localhost:3000/api/member
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDQ0NTAzMDQsInVzZXJfbmFtZSI6ImtpbWttIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImp0aSI6IjE1OTdhMjkyLTU0MTUtNGJjMi05YjYxLTdhMGI5NTYxMjUzNSIsImNsaWVudF9pZCI6ImlkIiwic2NvcGUiOlsiYWxsIl19.E_JPVjA7lDlS3Fr_IR85FIIllvp-BL_tpsepKbkKA28
+###
