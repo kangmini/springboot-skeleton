@@ -7,14 +7,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Data
 @Entity
 public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long id;
+    public long id;
 
-    private String email;
-    private String name;
+    public String email;
+    public String password;
+    public String name;
 }

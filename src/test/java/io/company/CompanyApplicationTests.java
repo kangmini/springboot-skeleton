@@ -27,8 +27,8 @@ public class CompanyApplicationTests {
     public void contextLoads() {
         for(int i = 0; i < 120; i++) {
             Member member = new Member();
-            member.setEmail("email@email.com" + String.valueOf(i));
-            member.setName("뼈다구님" + String.valueOf(i));
+            member.email = "email@email.com" + String.valueOf(i);//("email@email.com" + String.valueOf(i));
+            member.name = "뼈다구님" + String.valueOf(i);
             memberRepository.save(member);
         }
     }
